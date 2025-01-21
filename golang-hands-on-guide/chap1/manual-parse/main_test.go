@@ -7,7 +7,6 @@ import (
 
 func TestMainFunction(t *testing.T) {
 
-	//TODO 테스트케이스 추가 및 케이스에 따른 error발생, output변경 추가
 	tests := []struct {
 		command string
 		args    []string
