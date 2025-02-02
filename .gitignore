@@ -5,3 +5,6 @@
 *.ipr
 
 .DS_Store
+/tuckers-go-programming/wordsearch/ex25.1/ex25
+/tuckers-go-programming/wordsearch/go.mod
+go.mod
