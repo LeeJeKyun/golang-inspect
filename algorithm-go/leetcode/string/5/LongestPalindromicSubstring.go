@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-var left, maxLen int
+var start, maxLen int
 
 func longestPalindrome(s string) string {
 	length := len(s)
@@ -10,12 +10,13 @@ func longestPalindrome(s string) string {
 		return s
 	}
 
+	start, maxLen = 0, 0
+
 	for i := 0; i < length-1; i++ {
-		fmt.Println(left, maxLen)
+		extendPalindrome(s, i, i)
 		extendPalindrome(s, i, i+1)
-		extendPalindrome(s, i, i+2)
 	}
-	return s[left : left+maxLen]
+	return s[start : start+maxLen]
 }
 
 func extendPalindrome(s string, l, r int) { //문자열, 좌, 우 시작포인터 전달
@@ -23,7 +24,7 @@ func extendPalindrome(s string, l, r int) { //문자열, 좌, 우 시작포인�
 		l--
 		r++
 		if maxLen < r-l-1 {
-			left = l + 1
+			start = l + 1
 			maxLen = r - l - 1
 		}
 	}
