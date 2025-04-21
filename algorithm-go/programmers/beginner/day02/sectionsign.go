@@ -1,16 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
-func solution(num int, n int) int {
-	if num%n == 0 {
-		return 1
-	} else {
-		return 0
+func solution(emergency []int) []int {
+	increase := 1
+	for i := 0; i < len(emergency); i++ {
+		i2 := slices.Max(emergency)
+		emergency[i2] = increase
+		increase++
 	}
-}
 
+	return emergency
+}
 func main() {
-	i := solution(34, 3)
+	emergency := []int{3, 76, 24}
+	i := solution(emergency)
 	fmt.Println(i)
 }
