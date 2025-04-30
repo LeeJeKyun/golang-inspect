@@ -32,7 +32,7 @@ func parseArgs(w io.Writer, args []string) (config, error) {
 	if err != nil {
 		return c, err
 	}
-	// fs.Nargs()는 위치인수의 개수를 반환한다.
+	// fs.NArgs()는 위치인수의 개수를 반환한다.
 	if fs.NArg() != 0 {
 		return c, errors.New("Positional arguments specified")
 	}
